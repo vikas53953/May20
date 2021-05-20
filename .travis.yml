@@ -29,17 +29,9 @@ deploy:
 notifications:
   webhooks:
     urls:
-      - https://discord.com/api/webhooks/844921504864796683/G9Fp3EyxraksSpVdcw-MLzBI1muwDqCwiHQykQsG75Cn6gCbeP3-P1TY31xvW6UvnYI4
-    on_success: always
-    on_failure: always
-    on_start: always
-    on_cancel: always
-
-after_success:
-  - wget:
-      https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
-  - chmod +x send.sh
-  - ./send.sh success $WEBHOOK_URL
-after_failure:
-  - chmod +x send.sh
-  - ./send.sh failure $WEBHOOK_URL
+      - https://webexapis.com/v1/webhooks/incoming/Y2lzY29zcGFyazovL3VzL1dFQkhPT0svM2EzYTI3ZGMtNDA3ZS00NWQwLWJlYjEtYWQ0ODYwYmIwMWRi
+    on_success: never   # default: always
+    on_failure: always  # default: always
+    on_start: never     # default: never
+    on_cancel: never    # default: always
+    on_error: always    # default: always
