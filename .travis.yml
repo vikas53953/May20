@@ -21,4 +21,5 @@ script:
   - "ansible-playbook test.yml"
 
 deploy:
-  - "ansible-playbook ntp_config.yml"
+  provider: script
+  script: "ansible-playbook ntp_config.yml"
