@@ -35,3 +35,4 @@ script:
 deploy:
   provider: script
   script: "ansible-playbook ntp_config.yml"
+  when: manual
