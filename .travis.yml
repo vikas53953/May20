@@ -19,3 +19,6 @@ before_script:
 # using Terraform rather than assume they already exist.
 script:
   - "ansible-playbook test.yml"
+
+deploy:
+  - "ansible-playbook ntp_config.yml"
