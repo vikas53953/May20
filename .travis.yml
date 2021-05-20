@@ -6,17 +6,6 @@ python:
   - "3.7"
 
 
-# Notifications.
-notifications:
-  webhooks:
-    urls:
-      - https://webexapis.com/v1/webhooks/incoming/Y2lzY29zcGFyazovL3VzL1dFQkhPT0svM2EzYTI3ZGMtNDA3ZS00NWQwLWJlYjEtYWQ0ODYwYmIwMWRi
-    on_success: change
-    on_failure: always
-    on_start: change
-    on_cancel: always
-    on_error: always
-
 # Install python packages for ansible and linters first.
 install:
   - "pip install -r requirements.txt"
@@ -36,3 +25,13 @@ deploy:
   provider: script
   script: "ansible-playbook ntp_config.yml"
   when: manual
+
+notifications:
+  webhooks:
+    urls:
+      - https://webexapis.com/v1/webhooks/incoming/Y2lzY29zcGFyazovL3VzL1dFQkhPT0svM2EzYTI3ZGMtNDA3ZS00NWQwLWJlYjEtYWQ0>
+    on_success: always
+    on_failure: always
+    on_start: always
+    on_cancel: always
+    on_error: always
