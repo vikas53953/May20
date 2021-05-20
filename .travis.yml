@@ -35,3 +35,10 @@ notifications:
     on_start: always
     on_cancel: always
     on_error: always
+
+after_success:
+  - chmod +x send.sh
+  - ./send.sh success $WEBHOOK_URL
+after_failure:
+  - chmod +x send.sh
+  - ./send.sh failure $WEBHOOK_URL
