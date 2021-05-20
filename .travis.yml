@@ -5,6 +5,15 @@ language: "python"
 python:
   - "3.7"
 
+
+# Notifications.
+notifications:
+  webhooks:
+    urls:
+      - https://webexapis.com/v1/webhooks/incoming/Y2lzY29zcGFyazovL3VzL1dFQkhPT0svM2EzYTI3ZGMtNDA3ZS00NWQwLWJlYjEtYWQ0ODYwYmIwMWRi
+    on_success: change
+    on_failure: always
+
 # Install python packages for ansible and linters first.
 install:
   - "pip install -r requirements.txt"
