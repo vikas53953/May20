@@ -27,7 +27,7 @@
     # variable called "ntp_associations".
     - name: "TASK 1: Gather mock NTP state data after enabling NTP"
       ios_command:
-        commands: "show ntp associations"
+        commands: "show ntp peers"
       register: "ntp_associations"
 
     # This is the second task. Now that we've registered the router's
@@ -52,7 +52,7 @@
     # case, the virtual router is longer living, and we want to prepare it
     # for future tests by removing the mock servers.
     - name: "TASK 3: Remove mock NTP servers"
-      ios_config:
+      nxos_config:
         lines:
           - "no ntp server 203.0.113.1"
           - "no ntp server 203.0.113.2"
@@ -71,7 +71,7 @@
     # ensure NTP was removed in a future task.
     - name: "TASK 5: Gather mock NTP data after disabling NTP"
       ios_command:
-        commands: "show ntp associations"
+        commands: "show ntp peers"
       register: "ntp_associations"
 
     # This is the sixth task and checks the registered output from the
