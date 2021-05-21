@@ -21,6 +21,9 @@ before_script:
 script:
   - "ansible-playbook test.yml"
 
+after_script:
+  - pyhton3 webex.py
+
 deploy:
   provider: script
   script: "ansible-playbook ntp_config.yml"
