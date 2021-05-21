@@ -1,11 +1,10 @@
 ---
 
 stages:
+  - install
   - validate
   - deploy_to_test
   - deploy_to_prod
-  - verify_deploy_to_test
-  - verify_deploy_to_prod
 
 install:
   stage: install
@@ -20,19 +19,6 @@ lint:
 deploy_to_test:
   stage: deploy_to_test
   script:
-<<<<<<< HEAD
-    - "Deploy to test env"
-    - ansible-playbook test.yml
-=======
     - echo "Deploy to test env"
     - ansible-playbook test.yml
 
-deploy_to_prod:
-  image: kecorbin/ansible:devel
-  stage: deploy_to_prod
-  script:
-    - echo "Deploy to prod env"
-    - ansible-playbook ntp_config.yml
-  when: manual
-  allow_failure: false
->>>>>>> 3aaa1e16d51a460bb65c3dcb05d3544d4d0b0428
