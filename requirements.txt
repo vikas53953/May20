@@ -1,4 +1,3 @@
-python
 ansible==2.8.7
 paramiko
 yamllint
