@@ -1,31 +1,27 @@
 ---
-
-# Official language image. Look for the different tagged releases at:
-# https://hub.docker.com/r/library/python/tags/
-image: python:latest
-
-
 stages:
-  - install
-  - validate
-  - deploy_to_test
-  - deploy_to_prod
-
-install:
-  stage: install
-  script:
-    - sudo apt update
-    - sudo apt install python3-pip
-    - pip3 --version
-    - pip3 install -r requirements.txt
+  - validate
+  - deploy_to_test
+  - deploy_to_prod
+  - notify
 
 lint:
   stage: validate
+  image: kecorbin/ansible:devel
   script:
-    - yamllint --strict *.yml
+    - ansible-playbook --syntax-check inventory/dev.yaml site.yaml
 
 deploy_to_test:
+  image: kecorbin/ansible:devel
   stage: deploy_to_test
   script:
     - echo "Deploy to test env"
-    - ansible-playbook test.yml
+    - ansible-playbook test.yaml
+
+deploy_to_prod:
+  image: kecorbin/ansible:devel
+  stage: deploy_to_prod
+  script:
+    - echo "Deploy to prod env"
+    - ansible-playbook ntp_config.yml
+  when: manual  
