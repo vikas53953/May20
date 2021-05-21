@@ -9,7 +9,10 @@ stages:
 install:
   stage: install
   script:
-    - pip install -r requirements.txt
+    - sudo apt update
+    - sudo apt install python3-pip
+    - pip3 --version
+    - pip3 install -r requirements.txt
 
 lint:
   stage: validate
