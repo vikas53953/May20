@@ -1,0 +1,5 @@
+
+
+#!/bin/sh
+
+curl -X POST -H "Content-Type: application/json" -d '{"markdown" : "This is a formatted message from a Cisco Webex Teams incoming webhook."}' "https://webexapis.com/v1/webhooks/incoming/Y2lzY29zcGFyazovL3VzL1dFQkhPT0svM2EzYTI3ZGMtNDA3ZS00NWQwLWJlYjEtYWQ0ODYwYmIwMWRi"
