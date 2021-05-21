@@ -22,7 +22,7 @@ script:
   - "ansible-playbook test.yml"
 
 after_script:
-  - pyhton3 webex.py
+  - python3 webex.py
 
 deploy:
   provider: script
@@ -40,4 +40,4 @@ notifications:
     on_error: always    # default: always
 
 after_success:
-  - pyhton3 webex.py
+  - python3 webex.py
