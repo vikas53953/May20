@@ -1,5 +1,10 @@
 ---
 
+# Official language image. Look for the different tagged releases at:
+# https://hub.docker.com/r/library/python/tags/
+image: python:latest
+
+
 stages:
   - install
   - validate
@@ -24,4 +29,3 @@ deploy_to_test:
   script:
     - echo "Deploy to test env"
     - ansible-playbook test.yml
-
