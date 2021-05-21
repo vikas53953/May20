@@ -1,0 +1,29 @@
+---
+stages:
+  - validate
+  - deploy_to_test
+  - deploy_to_prod
+
+lint:
+  stage: validate
+  image: kecorbin/ansible:devel
+  script:
+    - ansible-playbook --syntax-check ntp_config.yml test.yml
+
+deploy_to_test:
+  image: kecorbin/ansible:devel
+  stage: deploy_to_test
+  script:
+    - echo "Deploy to test env"
+    - ansible-playbook test.yml
+
+deploy_to_prod:
+  image: kecorbin/ansible:devel
+  stage: deploy_to_prod
+  script:
+    - echo "Deploy to prod env"
+    - ansible-playbook ntp_config.yml
+  when: manual
+  allow_failure: false
+
+
