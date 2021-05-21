@@ -1,37 +1,24 @@
 ---
+
 stages:
   - validate
   - deploy_to_test
   - deploy_to_prod
-  - notify
+  - verify_deploy_to_test
+  - verify_deploy_to_prod
+
+install:
+  stage: install
+  script:
+    - pip install -r requirements.txt
 
 lint:
   stage: validate
-  image: kecorbin/ansible:devel
   script:
-    - ansible-playbook --syntax-check ntp_config.yml test.yml
+    - yamllint --strict *.yml
 
 deploy_to_test:
-  image: kecorbin/ansible:devel
   stage: deploy_to_test
   script:
-    - echo "Deploy to test env"
-    - ansible-playbook test.yml
-
-deploy_to_prod:
-  image: kecorbin/ansible:devel
-  stage: deploy_to_prod
-  script:
-    - echo "Deploy to prod env"
-    - ansible-playbook ntp_config.yml
-  when: manual
-  allow_failure: false
-
-
-WebExNotify:
-  image: hpreston/drone-spark:0.7
-  stage: notify
-  secrets: [ZTE2NTI2ZTEtZWJhMy00M2RkLTkzNjAtZjYzZTI4ZmE5NTM5YTQyNWVmZTItZjc4_PF84_1eb65fdf-9643-417f-9974-ad72cae0e10f, netbott@webex.bot]
-  message: "Build Done!"
-  when:
-    status: [success, failure]
+    - "Deploy to test env"
+    - ansible-playbook test.yml
