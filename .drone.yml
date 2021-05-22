@@ -11,10 +11,6 @@ pipeline:
       - "pip install -r requirements.txt"
       - "pip list"
       - "yamllint --strict *.yml"
-
-  ConfigTestNetwork:
-    image: hpreston/drone-ansible-netdevops
-    commands:
       - "ansible-playbook test.yml"
 
   SparkNotify:
