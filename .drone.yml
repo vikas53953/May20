@@ -1,21 +1,24 @@
 # New .drone.yml content
+---
 pipeline:
   BuildStart:
     image: hpreston/drone-ansible-netdevops
     commands:
       - echo "Starting Build"
 
-  Install:
+  Install and TestNetwork:
     image: hpreston/drone-ansible-netdevops
     commands:
       - "pip install -r requirements.txt"
       - "pip list"
       - "yamllint --strict *.yml"
+      - "ansible-playbook test.yml"
 
-    ConfigTestNetwork:
-      commands:
-        - "pip list"
-        - "ansible-playbook test.yml"
+  ConfigProdNetwork:
+    image: hpreston/drone-ansible-netdevops
+    commands:
+      - "pip list"
+      - "ansible-playbook ntp_config.yml"
 
   SparkNotify:
     image: hpreston/drone-spark:0.7
