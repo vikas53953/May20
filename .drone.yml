@@ -12,10 +12,10 @@ pipeline:
       - "pip list"
       - "yamllint --strict *.yml"
 
-  ConfigTestNetwork:
-    commands:
-      - "pip list"
-      - "ansible-playbook test.yml"
+    ConfigTestNetwork:
+      commands:
+        - "pip list"
+        - "ansible-playbook test.yml"
 
   SparkNotify:
     image: hpreston/drone-spark:0.7
