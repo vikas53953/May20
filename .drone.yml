@@ -17,6 +17,7 @@ pipeline:
   ConfigProdNetwork:
     image: hpreston/drone-ansible-netdevops
     commands:
+      - "pip install -r requirements.txt"
       - "pip list"
       - "ansible-playbook ntp_config.yml"
 
