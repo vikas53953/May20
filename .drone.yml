@@ -9,10 +9,7 @@ pipeline:
     image: hpreston/drone-ansible-netdevops
     commands:
       - "pip install -r requirements.txt"
-  
-  before_script:
-    image: hpreston/drone-ansible-netdevops
-    commands:
+      - "pip list"
       - "yamllint --strict *.yml"
 
   SparkNotify:
