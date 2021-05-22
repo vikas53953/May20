@@ -4,7 +4,6 @@ stages:
   - validate
   - deploy_to_test
   - deploy_to_prod
-  - notify
 
 lint:
   - stage: validate
