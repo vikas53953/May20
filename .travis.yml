@@ -42,3 +42,9 @@ deploy:
 after_success:
   - python3 webex.py
 
+SparkNotify:
+  image: hpreston/drone-spark:0.7
+  secrets: [ SPARK_TOKEN, personEmail, roomId, roomName ]
+  message: "Build Done!"
+  when:
+    status: [ success, failure ]
