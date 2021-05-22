@@ -10,6 +10,7 @@ pipeline:
     auth_token: ZTE2NTI2ZTEtZWJhMy00M2RkLTkzNjAtZjYzZTI4ZmE5NTM5YTQyNWVmZTItZjc4_PF84_1eb65fdf-9643-417f-9974-ad72cae0e10f
     roomId: Y2lzY29zcGFyazovL3VzL1JPT00vMTU4YWRlOTAtYTQ1NS0xMWViLTk1ODUtZWRiOTJkMTg5YjFj
     personEmail: netbott@webex.bot
+    roomName: Bot-Test-demo-space
 
     message: "Build Done!"
     when:
