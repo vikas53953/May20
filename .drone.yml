@@ -13,7 +13,6 @@ pipeline:
       - "yamllint --strict *.yml"
 
   ConfigTestNetwork:
-    image: hpreston/drone-ansible-netdevops
     commands:
       - "pip list"
       - "ansible-playbook test.yml"
