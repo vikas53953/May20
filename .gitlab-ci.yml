@@ -16,7 +16,7 @@ deploy_to_test:
   stage: deploy_to_test
   script:
     - echo "Deploy to test env"
-    - ansible-playbook test.yaml
+    - ansible-playbook test.yml
 
 deploy_to_prod:
   image: kecorbin/ansible:devel
