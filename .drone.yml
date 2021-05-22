@@ -4,8 +4,6 @@ pipeline:
     image: hpreston/drone-ansible-netdevops
     commands:
       - echo "Starting Build"
-      - git fetch
-      - git checkout master
 
   SparkNotify:
     image: hpreston/drone-spark:0.7
