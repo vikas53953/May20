@@ -9,7 +9,7 @@ lint:
   - stage: validate
   - image: kecorbin/ansible:devel
   - script:
-      - ansible-playbook --syntex-check ntp.config.yml test.yml
+      - ansible-playbook --syntex-check ntp_config.yml test.yml
 
 deploy_to_test:
   - stage: deploy_to_test
