@@ -4,35 +4,25 @@ stages:
   - validate
   - deploy_to_test
   - deploy_to_prod
-  - verify_deploy_to_test
-  - verify_deploy_to_prod
-
-install:
-  stage: install
-  script:
-    - pip install -r requirements.txt
+  - notify
 
 lint:
-  stage: validate
-  script:
-    - yamllint --strict *.yml
+  - stage: validate
+  - image: kecorbin/ansible:devel
+  - script:
+      - ansible-playbook --syntex-check ntp.config.yml test.yml
 
 deploy_to_test:
-  stage: deploy_to_test
-  script:
-<<<<<<< HEAD
-    - "Deploy to test env"
-    - ansible-playbook test.yml
-=======
-    - echo "Deploy to test env"
-    - ansible-playbook test.yml
+  - stage: deploy_to_test
+  - image: kecorbin/ansible:devel
+  - script:
+      - echo "Deploy to test env"
+      - ansible-playbook test.yaml
 
 deploy_to_prod:
-  image: kecorbin/ansible:devel
-  stage: deploy_to_prod
-  script:
-    - echo "Deploy to prod env"
-    - ansible-playbook ntp_config.yml
-  when: manual
-  allow_failure: false
->>>>>>> 3aaa1e16d51a460bb65c3dcb05d3544d4d0b0428
+  - stage: deploy_to_prod
+  - image: kecorbin/ansible:devel
+  - script:
+      - echo "Deploy to prod env"
+      - ansible-playbook ntp_config.yml
+    when: manual
