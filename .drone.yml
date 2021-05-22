@@ -7,7 +7,7 @@ pipeline:
 
   SparkNotify:
     image: hpreston/drone-spark:0.7
-    secrets: [ SPARK_TOKEN, PERSONEMAIL ]
+    secrets: [ SPARK_TOKEN, personEmail, roomName, roomId ]
     message: "Build Done!"
     when:
       status: [ success, failure ]
