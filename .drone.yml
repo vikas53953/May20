@@ -5,6 +5,11 @@ pipeline:
     commands:
       - echo "Starting Build"
 
+    Integration-ConfigTestNetwork:
+    image: hpreston/drone-ansible-netdevops
+    commands:
+      - "pip install -r requirements.txt"
+
   SparkNotify:
     image: hpreston/drone-spark:0.7
     secrets: [ SPARK_TOKEN, personEmail, roomId, roomName ]
