@@ -17,6 +17,8 @@ pipeline:
   Verify TestNetwork:
     image: hpreston/drone-ansible-netdevops
     commands:
+      - "pip install robotframework"
+      - "pip install robotframework-sshlibrary"
       - "pip install -r requirements1.txt"
       - "pip list"
       - "yamllint --strict *.yml"

@@ -1,6 +1,4 @@
 # requirememt
-pyats[full]
-robotframework
 ansible
 paramiko
 yamllint
