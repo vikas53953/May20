@@ -6,13 +6,21 @@ pipeline:
     commands:
       - echo "Starting Build"
 
-  Install and TestNetwork:
+  Install and Configure TestNetwork:
     image: hpreston/drone-ansible-netdevops
     commands:
       - "pip install -r requirements.txt"
       - "pip list"
       - "yamllint --strict *.yml"
       - "ansible-playbook test.yml"
+
+  Verify TestNetwork:
+    image: hpreston/drone-ansible-netdevops
+    commands:
+      - "pip install -r requirements1.txt"
+      - "pip list"
+      - "yamllint --strict *.yml"
+      - "robot verify_telnet.robot"
 
   ConfigProdNetwork:
     image: hpreston/drone-ansible-netdevops

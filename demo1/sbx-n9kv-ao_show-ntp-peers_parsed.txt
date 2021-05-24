@@ -1,0 +1,23 @@
+{
+  "_exclude": [],
+  "peer": {
+    "172.16.0.1": {
+      "isconfigured": {
+        "True": {
+          "address": "172.16.0.1",
+          "isconfigured": true,
+          "type": "server"
+        }
+      }
+    },
+    "172.16.1.11": {
+      "isconfigured": {
+        "True": {
+          "address": "172.16.1.11",
+          "isconfigured": true,
+          "type": "peer"
+        }
+      }
+    }
+  }
+}

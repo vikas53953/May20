@@ -1,0 +1,132 @@
+
+2021-05-24 21:42:55,815: %UNICON-INFO: +++ sbx-n9kv-ao logfile genie_learn/connection_sbx-n9kv-ao.txt +++
+
+2021-05-24 21:42:55,815: %UNICON-INFO: +++ Unicon plugin nxos +++
+
+Welcome to the DevNet Always On Sandbox for Open NX-OS
+
+This is a shared sandbox available for anyone to use to
+test APIs, explore features, and test scripts.  Please
+keep this in mind as you use it, and respect others use.
+
+The following programmability features are already enabled:
+  - NX-API
+  - NETCONF, RESTCONF, gRPC
+  - Native NX-OS and OpenConfig YANG Models
+
+Thanks for stopping by.
+
+
+2021-05-24 21:42:57,680: %UNICON-INFO: +++ connection to spawn: ssh -l admin 64.103.37.14 -p 8181, id: 140602489411280 +++
+
+2021-05-24 21:42:57,681: %UNICON-INFO: connection to sbx-n9kv-ao
+Password: 
+
+Cisco NX-OS Software
+Copyright (c) 2002-2019, Cisco Systems, Inc. All rights reserved.
+Nexus 9000v software ("Nexus 9000v Software") and related documentation,
+files or other reference materials ("Documentation") are
+the proprietary property and confidential information of Cisco
+Systems, Inc. ("Cisco") and are protected, without limitation,
+pursuant to United States and International copyright and trademark
+laws in the applicable jurisdiction which provide civil and criminal
+penalties for copying or distribution without Cisco's authorization.
+
+Any use or disclosure, in whole or in part, of the Nexus 9000v Software
+or Documentation to any third party for any purposes is expressly
+prohibited except as otherwise authorized by Cisco in writing.
+The copyrights to certain works contained herein are owned by other
+third parties and are used and distributed under license. Some parts
+of this software may be covered under the GNU Public License or the
+GNU Lesser General Public License. A copy of each such license is
+available at
+http://www.gnu.org/licenses/gpl.html and
+http://www.gnu.org/licenses/lgpl.html
+***************************************************************************
+*  Nexus 9000v is strictly limited to use for evaluation, demonstration   *
+*  and NX-OS education. Any use or disclosure, in whole or in part of     *
+*  the Nexus 9000v Software or Documentation to any third party for any   *
+*  purposes is expressly prohibited except as otherwise authorized by     *
+*  Cisco in writing.                                                      *
+***************************************************************************
+sbx-n9kv-ao# 
+
+2021-05-24 21:42:59,575: %UNICON-INFO: +++ initializing handle +++
+
+2021-05-24 21:42:59,576: %UNICON-INFO: +++ sbx-n9kv-ao: executing command 'term length 0' +++
+term length 0
+sbx-n9kv-ao# 
+
+2021-05-24 21:42:59,887: %UNICON-INFO: +++ sbx-n9kv-ao: executing command 'term width 511' +++
+term width 511
+sbx-n9kv-ao# 
+
+2021-05-24 21:43:00,197: %UNICON-INFO: +++ sbx-n9kv-ao: executing command 'terminal session-timeout 0' +++
+terminal session-timeout 0
+sbx-n9kv-ao# 
+
+2021-05-24 21:46:01,842: %UNICON-INFO: +++ sbx-n9kv-ao logfile genie_learn/connection_sbx-n9kv-ao.txt +++
+
+2021-05-24 21:46:01,842: %UNICON-INFO: +++ Unicon plugin nxos +++
+
+Welcome to the DevNet Always On Sandbox for Open NX-OS
+
+This is a shared sandbox available for anyone to use to
+test APIs, explore features, and test scripts.  Please
+keep this in mind as you use it, and respect others use.
+
+The following programmability features are already enabled:
+  - NX-API
+  - NETCONF, RESTCONF, gRPC
+  - Native NX-OS and OpenConfig YANG Models
+
+Thanks for stopping by.
+
+
+2021-05-24 21:46:03,613: %UNICON-INFO: +++ connection to spawn: ssh -l admin 64.103.37.14 -p 8181, id: 140139332738832 +++
+
+2021-05-24 21:46:03,613: %UNICON-INFO: connection to sbx-n9kv-ao
+Password: 
+
+Cisco NX-OS Software
+Copyright (c) 2002-2019, Cisco Systems, Inc. All rights reserved.
+Nexus 9000v software ("Nexus 9000v Software") and related documentation,
+files or other reference materials ("Documentation") are
+the proprietary property and confidential information of Cisco
+Systems, Inc. ("Cisco") and are protected, without limitation,
+pursuant to United States and International copyright and trademark
+laws in the applicable jurisdiction which provide civil and criminal
+penalties for copying or distribution without Cisco's authorization.
+
+Any use or disclosure, in whole or in part, of the Nexus 9000v Software
+or Documentation to any third party for any purposes is expressly
+prohibited except as otherwise authorized by Cisco in writing.
+The copyrights to certain works contained herein are owned by other
+third parties and are used and distributed under license. Some parts
+of this software may be covered under the GNU Public License or the
+GNU Lesser General Public License. A copy of each such license is
+available at
+http://www.gnu.org/licenses/gpl.html and
+http://www.gnu.org/licenses/lgpl.html
+***************************************************************************
+*  Nexus 9000v is strictly limited to use for evaluation, demonstration   *
+*  and NX-OS education. Any use or disclosure, in whole or in part of     *
+*  the Nexus 9000v Software or Documentation to any third party for any   *
+*  purposes is expressly prohibited except as otherwise authorized by     *
+*  Cisco in writing.                                                      *
+***************************************************************************
+sbx-n9kv-ao# 
+
+2021-05-24 21:46:05,865: %UNICON-INFO: +++ initializing handle +++
+
+2021-05-24 21:46:05,866: %UNICON-INFO: +++ sbx-n9kv-ao: executing command 'term length 0' +++
+term length 0
+sbx-n9kv-ao# 
+
+2021-05-24 21:46:06,159: %UNICON-INFO: +++ sbx-n9kv-ao: executing command 'term width 511' +++
+term width 511
+sbx-n9kv-ao# 
+
+2021-05-24 21:46:06,896: %UNICON-INFO: +++ sbx-n9kv-ao: executing command 'terminal session-timeout 0' +++
+terminal session-timeout 0
+sbx-n9kv-ao# 

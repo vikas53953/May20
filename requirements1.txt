@@ -1,0 +1,8 @@
+# requirememt
+pyats[full]
+robotframework
+ansible
+paramiko
+yamllint
+netaddr
+requests

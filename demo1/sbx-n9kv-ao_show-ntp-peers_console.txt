@@ -1,0 +1,8 @@
++++ sbx-n9kv-ao: executing command 'show ntp peers' +++
+show ntp peers
+--------------------------------------------------
+  Peer IP Address               Serv/Peer          
+--------------------------------------------------
+  172.16.0.1                    Server (configured)
+  172.16.1.11                   Peer (configured)
+sbx-n9kv-ao# 

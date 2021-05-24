@@ -1,0 +1,14 @@
+devices:
+  sbx-n9kv-ao:
+    alias: nxos
+    os: nxos
+    type: switch
+    credentials:
+      default:
+        username: admin
+        password: Admin_1234!
+    connections:
+      console:
+        ip: sbx-nxos-mgmt.cisco.com
+        protocol: ssh
+        port: 8181

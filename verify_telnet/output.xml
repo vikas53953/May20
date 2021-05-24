@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.5 on linux)" generated="20210524 22:52:45.214" rpa="false">
+<suite id="s1" name="Verify Telnet" source="/netdev/slt-netdevops/verify_telnet.robot">
+<kw name="Setup" type="setup">
+<kw name="Open Connection" library="SSHLibrary">
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<arguments>
+<arg>${host}</arg>
+<arg>port=8181</arg>
+</arguments>
+<status status="PASS" starttime="20210524 22:52:45.319" endtime="20210524 22:52:45.320"></status>
+</kw>
+<kw name="Login" library="SSHLibrary">
+<doc>Logs into the SSH server with the given ``username`` and ``password``.</doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<arg>delay=1</arg>
+</arguments>
+<msg timestamp="20210524 22:52:45.321" level="INFO">Logging into 'sbx-nxos-mgmt.cisco.com:8181' as 'admin'.</msg>
+<msg timestamp="20210524 22:52:50.309" level="INFO">Read output: 
+Cisco NX-OS Software
+Copyright (c) 2002-2019, Cisco Systems, Inc. All rights reserved.
+Nexus 9000v software ("Nexus 9000v Software") and related documentation,
+files or other reference materials ("Documentation") are
+the proprietary property and confidential information of Cisco
+Systems, Inc. ("Cisco") and are protected, without limitation,
+pursuant to United States and International copyright and trademark
+laws in the applicable jurisdiction which provide civil and criminal
+penalties for copying or distribution without Cisco's authorization.
+
+Any use or disclosure, in whole or in part, of the Nexus 9000v Software
+or Documentation to any third party for any purposes is expressly
+prohibited except as otherwise authorized by Cisco in writing.
+The copyrights to certain works contained herein are owned by other
+third parties and are used and distributed under license. Some parts
+of this software may be covered under the GNU Public License or the
+GNU Lesser General Public License. A copy of each such license is
+available at
+http://www.gnu.org/licenses/gpl.html and
+http://www.gnu.org/licenses/lgpl.html
+***************************************************************************
+*  Nexus 9000v is strictly limited to use for evaluation, demonstration   *
+*  and NX-OS education. Any use or disclosure, in whole or in part of     *
+*  the Nexus 9000v Software or Documentation to any third party for any   *
+*  purposes is expressly prohibited except as otherwise authorized by     *
+*  Cisco in writing.                                                      *
+***************************************************************************
+sbx-n9kv-ao#</msg>
+<status status="PASS" starttime="20210524 22:52:45.320" endtime="20210524 22:52:50.309"></status>
+</kw>
+<kw name="Enable Ssh Logging" library="SSHLibrary">
+<doc>Enables logging of SSH protocol output to given ``logfile``.</doc>
+<arguments>
+<arg>ssh.log</arg>
+</arguments>
+<msg timestamp="20210524 22:52:50.310" level="INFO" html="yes">SSH log is written to &lt;a href="ssh.log"&gt;file&lt;/a&gt;.</msg>
+<status status="PASS" starttime="20210524 22:52:50.309" endtime="20210524 22:52:50.310"></status>
+</kw>
+<status status="PASS" starttime="20210524 22:52:45.319" endtime="20210524 22:52:50.310"></status>
+</kw>
+<test id="s1-t1" name="Verify Eth1/1 is up">
+<kw name="Execute Command" library="SSHLibrary">
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<arguments>
+<arg>show run interface ethernet 1/1</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20210524 22:52:50.311" level="INFO">Executing command 'show run interface ethernet 1/1'.</msg>
+<msg timestamp="20210524 22:52:51.082" level="INFO">Command exited with return code 0.</msg>
+<msg timestamp="20210524 22:52:51.082" level="INFO">${output} = 
+!Command: show running-config interface Ethernet1/1
+!Running configuration last done at: Mon May 24 01:23:27 2021
+!Time: Mon May 24 01:25:33 2021
+
+version 9.3(3) Bios:version  
+
+interface Ethernet1/1...</msg>
+<status status="PASS" starttime="20210524 22:52:50.311" endtime="20210524 22:52:51.082"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>switchport mode trunk</arg>
+<arg>switchport trunk allowed vlan 100-110</arg>
+</arguments>
+<status status="PASS" starttime="20210524 22:52:51.083" endtime="20210524 22:52:51.084"></status>
+</kw>
+<status status="PASS" starttime="20210524 22:52:50.310" endtime="20210524 22:52:51.084" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Show version test fail">
+<kw name="Execute Command" library="SSHLibrary">
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<arguments>
+<arg>show version</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20210524 22:52:51.086" level="INFO">Executing command 'show version'.</msg>
+<msg timestamp="20210524 22:52:53.068" level="INFO">Command exited with return code 0.</msg>
+<msg timestamp="20210524 22:52:53.068" level="INFO">${output} = Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac
+Documents: http://www.cisco.com/en/US/products/ps9372/tsd_products_support_series_home.html
+Copyright (c) 2002-2019,...</msg>
+<status status="PASS" starttime="20210524 22:52:51.086" endtime="20210524 22:52:53.068"></status>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${output}</arg>
+<arg>Version 7.3(0)D1(1)</arg>
+</arguments>
+<status status="PASS" starttime="20210524 22:52:53.068" endtime="20210524 22:52:53.069"></status>
+</kw>
+<status status="PASS" starttime="20210524 22:52:51.085" endtime="20210524 22:52:53.069" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210524 22:52:45.215" endtime="20210524 22:52:53.071"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" id="s1" name="Verify Telnet">Verify Telnet</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
